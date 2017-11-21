@@ -10,6 +10,8 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.NativeButton;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -40,13 +42,11 @@ public class MyUI extends UI {
 
         for (Integer row = 0; row < gridLayout.getRows(); row++) {
             for (Integer col = 0; col < gridLayout.getColumns(); col++) {
-                Label btn = new Label(row.toString() + " - " + col.toString());
+                NativeButton btn = new NativeButton(row.toString() + " - " + col.toString());
                 btn.setWidth("95%");
                 btn.setHeight("95%");
                 btn.setStyleName("tile");
-
-
-
+                btn.addClickListener(event -> Notification.show("You clicked: " + btn.getCaption()));
                 gridLayout.addComponent(btn, row, col);
                 gridLayout.setRowExpandRatio(row, 0.0f);
                 gridLayout.setColumnExpandRatio(col, 0.0f);

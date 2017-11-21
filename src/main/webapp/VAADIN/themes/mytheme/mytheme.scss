@@ -34,14 +34,14 @@
 @mixin mytheme {
   @include valo;
 
-  .v-label-tile {
-    color: #ffeeee;
+  .v-nativebutton-tile {
+    border: none;
     background-color: #1e6b15;
-    font-weight: 400;
+    border-radius: 50px;
+    color: #ffeeee;
     font-size: 50px;
+    font-weight: bold;
     text-align: center;
-    border-radius: 25px;
-
   }
 
   .black {
